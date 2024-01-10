@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/styles.css" type="text/css">
+    <script src="/assets/todo-list.js"></script>
+</head>
+<body>
+    <div id="todo-table">
+        <form action="">
+            任务名：
+            <input id="item" type="text" name="item" placeholder="Add new item..." required/><br/>
+            备注：
+            <input id="remark" type="text" name="remark"/><br/>
+            最后日期：
+            <input id="deadline" type="date" name="deadline"/><br/>
+            优先级：
+            <input id="priority" type="number" name="priority"><br/>
+            <button type="submit">添加任务</button>
+        </form>
+
+    </div>
+    <div>
+        <ul>
+            <% todos.forEach(function (todo) { %>
+                <li>
+                    <h3><%= todo.item %></h3>
+                    <p>
+                        <%= todo.remark %>
+                    </p>
+                    <p><%= todo.done ? '完成' : '未完成' %></p>
+                    <p>
+                        <%= todo.deadline %>
+                    </p>
+                    <span>优先级别 <%= todo.priority %></span>
+                    <button>删除</button>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+###
+GET http://localhost:3000/todo
+
+### 
+GET http://localhost:3000/todo/64e853feed760197afb67944
+
+### 
+DELETE http://localhost:3000/todo/64e853feed760197afb67944
+
+### 
+DELETE http://localhost:3000/todo/666
