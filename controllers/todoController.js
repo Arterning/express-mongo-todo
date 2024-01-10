@@ -20,7 +20,7 @@ var todoSchema = new mongoose.Schema({
 var Todo = mongoose.model('Todo', todoSchema)
 
 
-router.get('/todo', async function (req, res) {
+router.get('/', async function (req, res) {
     const todos = await Todo.find({}).sort({ created: 1 })
     res.render('todo', { todos: todos })
 }),
